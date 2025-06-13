@@ -1,0 +1,43 @@
+﻿@page "/habitaciones"
+
+<h3>🛏️ Gestión de Habitaciones</h3>
+
+<p>Selecciona una acción para gestionar las habitaciones de tu hotel:</p>
+
+<div class="d-flex flex-column gap-3 w-50">
+    <button class="btn btn-success btn-lg" @onclick="IrAAgregar">➕ Agregar Habitación</button>
+    <button class="btn btn-info btn-lg" @onclick="IrAVer">🔍 Ver Habitaciones</button>
+    <button class="btn btn-danger btn-lg" @onclick="IrAEliminar">🗑️ Eliminar Habitación</button>
+</div>
+
+@if (!string.IsNullOrEmpty(Mensaje))
+{
+    <div class="alert alert-primary mt-4" role="alert">
+        @Mensaje
+    </div>
+}
+
+@code {
+    private string? Mensaje { get; set; }
+
+    private void IrAAgregar()
+    {
+        Mensaje = "Redirigiendo a 'Agregar Habitación'...";
+        // Aquí puedes navegar a otra página o mostrar un formulario
+    }
+
+    private void IrAVer()
+    {
+        Mensaje = "Mostrando lista de habitaciones...";
+        // Aquí puedes cargar una tabla desde la base de datos
+    }
+
+    private void IrAEliminar()
+    {
+        Mensaje = "Redirigiendo a 'Eliminar Habitación'...";
+        // Aquí puedes abrir un modal de confirmación
+    }
+}
+@code {
+}
+

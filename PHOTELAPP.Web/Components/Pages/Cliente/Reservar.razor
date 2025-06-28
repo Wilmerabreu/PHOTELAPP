@@ -1,0 +1,109 @@
+﻿@page "/cliente/reservar"
+@layout Layout.SimpleLayout
+@using System.ComponentModel.DataAnnotations
+
+<!-- Botón Atrás -->
+<a href="/cliente/indexcliente" class="btn btn-danger mb-3">
+    🔙 Atrás
+</a>
+
+<h3>🏨 Haz tu Reserva</h3>
+<p>Completa los datos para encontrar la habitación ideal para ti.</p>
+
+<EditForm Model="@ModeloReserva" FormName="Main" >
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <!-- Datos personales -->
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Nombre:</label>
+            <InputText @bind-Value="ModeloReserva.Nombre" class="form-control" />
+            <ValidationMessage For="@(() => ModeloReserva.Nombre)" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Apellido:</label>
+            <InputText @bind-Value="ModeloReserva.Apellido" class="form-control" />
+            <ValidationMessage For="@(() => ModeloReserva.Apellido)" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Cédula:</label>
+            <InputText @bind-Value="ModeloReserva.Cedula" class="form-control" />
+            <ValidationMessage For="@(() => ModeloReserva.Cedula)" />
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Cantidad de personas:</label>
+            <InputNumber @bind-Value="ModeloReserva.CantidadPersonas" class="form-control" />
+            <ValidationMessage For="@(() => ModeloReserva.CantidadPersonas)" />
+        </div>
+    </div>
+
+    <!-- Fechas -->
+    <div class="mb-3">
+        <label class="form-label">Fecha de entrada:</label>
+        <InputDate @bind-Value="ModeloReserva.FechaEntrada" class="form-control" />
+        <ValidationMessage For="@(() => ModeloReserva.FechaEntrada)" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Fecha de salida:</label>
+        <InputDate @bind-Value="ModeloReserva.FechaSalida" class="form-control" />
+        <ValidationMessage For="@(() => ModeloReserva.FechaSalida)" />
+    </div>
+
+    <!-- Tipo de habitación -->
+    <div class="mb-3">
+        <label class="form-label">Tipo de habitación:</label>
+        <InputSelect @bind-Value="ModeloReserva.TipoHabitacion" class="form-select">
+            <option value="">Selecciona un tipo</option>
+            <option value="Individual">Individual</option>
+            <option value="Doble">Doble</option>
+            <option value="Suite">Suite</option>
+        </InputSelect>
+        <ValidationMessage For="@(() => ModeloReserva.TipoHabitacion)" />
+    </div>
+
+    <!-- Botón -->
+    <button type="submit" class="btn btn-primary">
+        🔍 Buscar Disponibilidad
+    </button>
+</EditForm>
+
+
+@code {
+    private ReservaCliente ModeloReserva = new();
+
+    public class ReservaCliente
+    {
+        [Required(ErrorMessage = "El nombre es obligatorio.")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "El nombre debe tener entre 2 y 50 caracteres.")]
+		public string Nombre { get; set; } = null!;
+
+        [Required(ErrorMessage = "El apellido es obligatorio.")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "El apellido debe tener entre 2 y 50 caracteres.")]
+		public string Apellido { get; set; } = null!;
+
+        [Required(ErrorMessage = "La cédula es obligatoria.")]
+        [RegularExpression(@"^\d{7,15}$", ErrorMessage = "La cédula debe contener solo números y tener entre 7 y 15 dígitos.")]
+		public string Cedula { get; set; } = null!;
+
+        [Required(ErrorMessage = "La cantidad de personas es obligatoria.")]
+        [Range(1, 5, ErrorMessage = "Debe ser entre 1 y 5 personas.")]
+        public int CantidadPersonas { get; set; }
+
+        [Required(ErrorMessage = "La fecha de entrada es obligatoria.")]
+        [Range(typeof(DateTime), "1/1/2024", "1/1/2030", ErrorMessage = "Selecciona una fecha válida (entre 2024 y 2030).")]
+        public DateTime? FechaEntrada { get; set; }
+
+        [Required(ErrorMessage = "La fecha de salida es obligatoria.")]
+        [Range(typeof(DateTime), "1/1/2024", "1/1/2030", ErrorMessage = "Selecciona una fecha válida (entre 2024 y 2030).")]
+        public DateTime? FechaSalida { get; set; }
+
+        [Required(ErrorMessage = "Debes seleccionar un tipo de habitación.")]
+        public string? TipoHabitacion { get; set; }
+    }
+}
+

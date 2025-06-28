@@ -1,0 +1,57 @@
+﻿@page "/cliente/indexcliente"
+@layout Layout.SimpleLayout
+
+
+<div class="text-center my-5">
+    <h1 class="display-4">🏨 Bienvenido a Hotel Mar del Sol</h1>
+    <p class="lead text-muted">Disfruta de unas vacaciones inolvidables en nuestro hotel frente al mar.</p>
+</div>
+
+<!-- Sección de introducción -->
+<div class="container my-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h4>¿Por qué elegirnos?</h4>
+            <p>
+                En Hotel Mar del Sol ofrecemos habitaciones modernas, vistas espectaculares al océano,
+                desayuno incluido y atención personalizada para que disfrutes de tu estadía al máximo.
+            </p>
+            <p>
+                Contamos con suites ejecutivas, habitaciones familiares y acceso directo a la playa.
+            </p>
+
+        </div>
+        <div class="col-md-6">
+            <!-- Imagen del hotel -->
+            <img src="images/hotel.jpg" alt="Hotel" class="img-fluid rounded shadow-sm" />
+        </div>
+    </div>
+</div>
+
+<!-- Galería de fotos -->
+<div class="bg-light py-5">
+    <div class="container text-center">
+        <h4>Nuestras habitaciones</h4>
+        <p class="mb-4">Explora nuestros tipos de habitaciones y servicios disponibles.</p>
+
+        <div class="row g-3 justify-content-center">
+            <div class="col-md-4">
+                <img src="images/Habitacion_doble.jpg" alt="Habitación Doble" class="img-fluid rounded" />
+                <p class="mt-2"><strong>Habitación Doble</strong></p>
+            </div>
+            <div class="col-md-4">
+                <img src="images/suite_ejecutiva.jpg" alt="Suite" class="img-fluid rounded" />
+                <p class="mt-2"><strong>Suite Ejecutiva</strong></p>
+            </div>
+            <div class="col-md-4">
+                <img src="images/piscina.jpg" alt="Piscina" class="img-fluid rounded" />
+                <p class="mt-2"><strong>Piscina y áreas comunes</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Botón final -->
+<div class="text-center my-5">
+    <a href="/cliente/reservar" class="btn btn-success btn-lg">📅 ¡Haz tu reserva ahora!</a>
+</div>

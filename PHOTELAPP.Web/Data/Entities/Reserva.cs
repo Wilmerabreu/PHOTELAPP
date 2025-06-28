@@ -11,9 +11,9 @@ namespace PHOTELAPP.Web.Data.Entities
         public int Id { get; set; }
         public int HabitacionId { get; set; }
         public int ClienteId { get; set; }
-        public DateTime Fecha_inicio { get; set; }
-        public DateTime Fecha_fin { get; set; }
-        public string Estado { get; set; }
+        public DateTime FechaEntrada { get; set; }
+        public DateTime FechaSalida { get; set; }
+        public string Estado { get; set; } = null!;
         public int Total { get; set; }
     }
 }

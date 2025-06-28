@@ -9,9 +9,9 @@ namespace PHOTELAPP.Web.Data.Entities
 
         [Key]
         public int Id { get; set; }
-        public string Tipo { get; set; }
+        public string Tipo { get; set; } = null!;
         public int Capacidad { get; set; }
-        public int Precio { get; set; }
+        public int PrecioPorNoche { get; set; }
         public bool Disponibilidad { get; set; }
 
     }

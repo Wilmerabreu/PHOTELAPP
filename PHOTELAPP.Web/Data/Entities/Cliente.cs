@@ -8,8 +8,9 @@ namespace PHOTELAPP.Web.Data.Entities
     {
        [Key]
         public int IdCliente { get; set; }
-        public string Nombre { get; set; }  
-        public string Apellido { get; set; }
+        public string Nombre { get; set; } = null!;
+        public string Apellido { get; set; } = null!;
+        public required string Cedula { get; set; }
         public int Telefono { get; set; }
 
 

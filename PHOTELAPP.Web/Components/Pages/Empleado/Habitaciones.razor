@@ -10,31 +10,26 @@
     <button class="btn btn-danger btn-lg" @onclick="IrAEliminar">🗑️ Eliminar Habitación</button>
 </div>
 
-@if (!string.IsNullOrEmpty(Mensaje))
-{
-    <div class="alert alert-primary mt-4" role="alert">
-        @Mensaje
-    </div>
-}
+
 
 @code {
     private string? Mensaje { get; set; }
 
     private void IrAAgregar()
     {
-        Mensaje = "Redirigiendo a 'Agregar Habitación'...";
+
         // Aquí puedes navegar a otra página o mostrar un formulario
     }
 
     private void IrAVer()
     {
-        Mensaje = "Mostrando lista de habitaciones...";
+
         // Aquí puedes cargar una tabla desde la base de datos
     }
 
     private void IrAEliminar()
     {
-        Mensaje = "Redirigiendo a 'Eliminar Habitación'...";
+
         // Aquí puedes abrir un modal de confirmación
     }
 }

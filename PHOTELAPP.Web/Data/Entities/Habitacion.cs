@@ -12,7 +12,7 @@ namespace PHOTELAPP.Web.Data.Entities
         public string Tipo { get; set; } = null!;
         public int Capacidad { get; set; }
         public int PrecioPorNoche { get; set; }
-        public bool Disponibilidad { get; set; }
+        public bool Disponibilidad { get; set; } = false;
 
     }
 }

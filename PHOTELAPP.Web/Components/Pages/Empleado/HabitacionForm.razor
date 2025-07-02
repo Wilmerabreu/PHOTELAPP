@@ -1,5 +1,45 @@
-﻿<h3>HabitacionForm</h3>
+﻿@page "/empleado/habitacionform"
+@using PHOTELAPP.Web.Data.Entities
+@using System.ComponentModel.DataAnnotations
+
+<h3>Registrar Nueva Habitación</h3>
+
+<EditForm Model="@nuevaHabitacion"  FormName="AgregarHabitacion">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Tipo de habitación</label>
+        <InputText @bind-Value="nuevaHabitacion.Tipo" class="form-control" />
+        <ValidationMessage For="@(() => nuevaHabitacion.Tipo)" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Capacidad</label>
+        <InputNumber @bind-Value="nuevaHabitacion.Capacidad" class="form-control" />
+        <ValidationMessage For="@(() => nuevaHabitacion.Capacidad)" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Precio por noche</label>
+        <InputNumber @bind-Value="nuevaHabitacion.PrecioPorNoche" class="form-control" />
+        <ValidationMessage For="@(() => nuevaHabitacion.PrecioPorNoche)" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Disponible</label>
+        <InputCheckbox @bind-Value="nuevaHabitacion.Disponibilidad" class="form-check-input" />
+        <span class="ms-2">@((nuevaHabitacion.Disponibilidad) ? "Sí" : "No")</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Registrar</button>
+</EditForm>
+
+
 
 @code {
+    private Habitacion nuevaHabitacion = new Habitacion();
+    private string? mensaje;
 
+    
 }

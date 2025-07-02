@@ -1,5 +1,44 @@
-﻿<h3>ClienteReservas</h3>
+﻿@page "/cliente/misreservas"
+@using PHOTELAPP.Web.Data.Entities
+
+<h3>Mis Reservas</h3>
+
+@if (reservas == null)
+{
+    <p>Cargando reservas...</p>
+}
+else if (!reservas.Any())
+{
+    <div class="alert alert-info">No tienes reservas registradas.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Habitación</th>
+                <th>Fecha Entrada</th>
+                <th>Fecha Salida</th>
+                <th>Personas</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reserva in reservas)
+            {
+                <tr>
+                    <td>@reserva.HabitacionId</td>
+                    <td>@reserva.FechaEntrada</td>
+                    <td>@reserva.FechaSalida</td>
+                    <td>@reserva.CantidadPersonas</td>
+                    <td>@reserva.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
+    private List<Reserva>? reservas;
 
 }

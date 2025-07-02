@@ -5,34 +5,14 @@
 <p>Selecciona una acción para gestionar las habitaciones de tu hotel:</p>
 
 <div class="d-flex flex-column gap-3 w-50">
-    <button class="btn btn-success btn-lg" @onclick="IrAAgregar">➕ Agregar Habitación</button>
-    <button class="btn btn-info btn-lg" @onclick="IrAVer">🔍 Ver Habitaciones</button>
-    <button class="btn btn-danger btn-lg" @onclick="IrAEliminar">🗑️ Eliminar Habitación</button>
+    <a href="/empleado/habitacionform" class="btn btn-success btn-lg">Agregar Habitacion</a>
+    <a href="/empleado/verhabitaciones" class="btn btn-info btn-lg"> Ver Habitaciones</a>
+    <a href="/empleado/eliminarhabitacion" class="btn btn-danger btn-lg"> Eliminar Habitación</a>
 </div>
 
 
 
 @code {
-    private string? Mensaje { get; set; }
-
-    private void IrAAgregar()
-    {
-
-        // Aquí puedes navegar a otra página o mostrar un formulario
-    }
-
-    private void IrAVer()
-    {
-
-        // Aquí puedes cargar una tabla desde la base de datos
-    }
-
-    private void IrAEliminar()
-    {
-
-        // Aquí puedes abrir un modal de confirmación
-    }
-}
-@code {
+   
 }
 

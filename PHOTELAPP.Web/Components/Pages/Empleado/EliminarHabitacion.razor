@@ -1,0 +1,20 @@
+﻿@page "/empleado/eliminarhabitacion"
+
+<h3>Eliminar Habitación</h3>
+
+<div class="mb-3">
+    <label for="habitacionSelect" class="form-label">Selecciona una habitación:</label>
+    <InputSelect id="habitacionSelect" class="form-select" @bind-Value="habitacionSeleccionadaId">
+        <option value="">-- Selecciona --</option>
+        <!-- Ejemplo de opciones estáticas, reemplaza por un foreach si luego cargas datos -->
+
+    </InputSelect>
+</div>
+
+<button class="btn btn-danger" disabled="@string.IsNullOrEmpty(habitacionSeleccionadaId)">
+    Eliminar
+</button>
+
+@code {
+    private string? habitacionSeleccionadaId;
+}

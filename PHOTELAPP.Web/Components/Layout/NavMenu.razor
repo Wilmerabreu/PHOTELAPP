@@ -10,17 +10,17 @@
         <!-- Inicio -->
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+                <span class="" aria-hidden="true"></span> Home
             </NavLink>
         </div>
         <div class="nav-item px-3">
         <NavLink class="nav-link" href="/cliente/reservar">
-                <span class="bi bi-card-list" aria-hidden="true"></span> Reservar
+                <span class="" aria-hidden="true"></span> Reservar
         </NavLink>
     </div>
     <div class="nav-item px-3">
         <NavLink class="nav-link" href="/cliente/misreservas">
-                <span class="bi bi-card-list" aria-hidden="true"></span> Mis Reservas
+                <span class="" aria-hidden="true"></span> Mis Reservas
         </NavLink>
     </div>
 
@@ -30,28 +30,21 @@
                 <!-- Gestión de Habitaciones -->
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="/habitaciones">
-                        <span class="bi bi-building" aria-hidden="true"></span> Habitaciones
+                        <span class="" aria-hidden="true"></span> Habitaciones
                     </NavLink>
                 </div>
 
                 <!-- Reservas -->
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="/reservas">
-                        <span class="bi bi-calendar-check" aria-hidden="true"></span> Reservas
-                    </NavLink>
-                </div>
-
-                <!-- Sobre Nosotros (opcional: puedes dejarlo visible siempre o solo logueados) -->
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="/sobrenosotros">
-                        <span class="bi bi-info-circle" aria-hidden="true"></span> Sobre Nosotros
+                        <span class="" aria-hidden="true"></span> Reservas
                     </NavLink>
                 </div>
 
                 <!-- Usuario logueado -->
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="Account/Manage">
-                        <span class="bi bi-person-fill-nav-menu" aria-hidden="true"></span> @context.User.Identity?.Name
+                    <NavLink class="nav-link" href="Cuenta">
+                        <span class="" aria-hidden="true"></span> @context.User.Identity?.Name
                     </NavLink>
                 </div>
 
@@ -61,7 +54,7 @@
                         <AntiforgeryToken />
                         <input type="hidden" name="ReturnUrl" value="@currentUrl" />
                         <button type="submit" class="nav-link">
-                            <span class="bi bi-arrow-bar-left-nav-menu" aria-hidden="true"></span> Logout
+                            <span class="" aria-hidden="true"></span> Logout
                         </button>
                     </form>
                 </div>
@@ -71,12 +64,12 @@
                 <!-- Registro e Inicio de sesión -->
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="Account/Register">
-                        <span class="bi bi-person-nav-menu" aria-hidden="true"></span> Register
+                        <span class="" aria-hidden="true"></span> Register
                     </NavLink>
                 </div>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="Account/Login">
-                        <span class="bi bi-person-badge-nav-menu" aria-hidden="true"></span> Login(Empleado)
+                        <span class="" aria-hidden="true"></span> Login(Empleado)
                     </NavLink>
                 </div>
             </NotAuthorized>
